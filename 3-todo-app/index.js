@@ -1,10 +1,6 @@
-import { addTaskButton, themeToggleButton } from "./scripts/elements.js";
-import { toggleTheme, addTask } from "./scripts/utils.js";
+import { initListeners } from "./scripts/eventListeners.js";
+import { initDataOnStartup } from "./scripts/utils.js";
 
-themeToggleButton.onclick = () => {
-  toggleTheme();
-};
+initDataOnStartup();
 
-addTaskButton.onclick = (e) => {
-  addTask(e);
-};
+initListeners();
