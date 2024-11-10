@@ -1,0 +1,328 @@
+:root {
+  // Font
+  --main-font: Josefin Sans;
+  --main-font-size: 1rem;
+  --font-large: 2rem;
+  --font-bold: 700;
+  // Main
+  --color-active: hsl(220, 98%, 61%);
+  --background-gradient: linear-gradient(
+    115deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --main-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  // Light Theme
+  --light-background: hsl(0, 0%, 98%);
+  --light-app-background: hsl(236, 33%, 92%);
+  // --light-color-secondary: hsl(233, 11%, 84%);
+  --light-color-secondary: hsl(236, 9%, 61%);
+  // --dark-color-secondary: hsl(233, 14%, 35%);
+  --very-dark-blue: hsl(235, 21%, 11%);
+  //  Dark Theme
+  --dark-background: hsl(235, 24%, 19%);
+  --dark-color-secondary: hsl(235, 19%, 35%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --dark-color-primary: hsl(234, 39%, 85%);
+  --dark-color-primary-hover: hsl(236, 33%, 92%);
+
+  --default-padding: 0.8rem;
+  --border-radius: 0.2rem;
+
+  font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  color: var(--color-active) !important;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  height: 100vh;
+  margin: 0;
+  background: url("./images/bg-desktop-light.jpg") no-repeat center top / cover,
+    var(--light-app-background);
+  background-size: 100% 33.33%;
+  background-position: top;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.isDark {
+    background: url("./images/bg-desktop-dark.jpg") no-repeat center top / cover,
+      var(--very-dark-blue);
+    background-size: 100% 33.33%;
+    background-position: top;
+
+    & .TaskList {
+      &__form {
+        background-color: var(--dark-background);
+        color: var(--dark-color-primary);
+      }
+
+      &__input {
+        background-color: var(--dark-background);
+        color: var(--dark-color-primary);
+
+        &::placeholder {
+          color: var(--dark-color-secondary);
+        }
+      }
+
+      &__list {
+        background-color: var(--dark-background);
+        color: var(--dark-color-primary);
+      }
+
+      &__taskContent {
+        border-color: var(--dark-color-secondary);
+      }
+
+      &__footer {
+        background-color: var(--dark-background);
+        color: var(--dark-color-secondary);
+      }
+    }
+
+    & .attribution {
+      color: var(--dark-color-primary);
+    }
+  }
+
+  & .DarkThemeToggle {
+    &__activate {
+      display: inline-block;
+    }
+
+    &__deactivate {
+      display: none;
+    }
+  }
+
+  &.isDark .DarkThemeToggle {
+    &__activate {
+      display: none;
+    }
+
+    &__deactivate {
+      display: inline-block;
+    }
+  }
+}
+
+// light theme
+
+.container {
+  height: 80vh;
+  width: 80%;
+  text-align: center;
+  align-self: center;
+  padding: 20px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  & > *:last-child {
+    margin-top: auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+}
+
+.Header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    color: white;
+    text-transform: uppercase;
+    font-size: var(--font-large);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.5rem;
+  }
+}
+
+.TaskList {
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    padding: 0 var(--default-padding);
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    background-color: var(--light-background);
+    color: var(--very-dark-blue);
+    box-shadow: var(--main-shadow);
+  }
+  &__input {
+    width: 100%;
+    padding: var(--default-padding);
+    border: 0;
+    flex: 1 1 auto;
+    min-width: min(4.8rem, 90%);
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background-color: var(--light-background);
+    color: var(--very-dark-blue);
+    box-shadow: var(--main-shadow);
+  }
+
+  &__taskContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--default-padding);
+    border-bottom: 1px solid var(--dark-color-primary);
+
+    &.isChecked {
+      .TaskList {
+        &__checkbox {
+          border: 1px solid transparent;
+          background: var(--background-gradient);
+          transition: all 0.3s ease;
+        }
+
+        &__value {
+          color: var(--dark-grayish-blue);
+          text-decoration: line-through;
+          transition: all 0.3s ease;
+        }
+
+        &__checkboxImg {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover .TaskList__deleteIcon {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.dragging {
+      opacity: 0.5;
+      cursor: move;
+    }
+  }
+
+  &__checkbox {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--dark-color-secondary);
+    border-radius: 50%;
+    padding: 0.48rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Img {
+      opacity: 0;
+    }
+  }
+
+  &__valueContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__value {
+    flex: 1;
+    cursor: pointer;
+    height: 100%;
+    text-align: left;
+    padding: 0 var(--default-padding);
+  }
+
+  &__deleteIcon {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  &__footer {
+    background-color: var(--light-background);
+    color: var(--light-color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--default-padding);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+
+  &__navList {
+    display: flex;
+    gap: var(--default-padding);
+    color: inherit;
+
+    &-button {
+      font: inherit;
+      font-size: 1rem;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: var(--color-active);
+      }
+    }
+  }
+
+  &__clearCompletedBtn {
+    font: inherit;
+    font-size: 1rem;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      color: var(--color-active);
+    }
+  }
+}

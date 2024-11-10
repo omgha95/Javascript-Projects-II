@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Advanced Javascript Project",
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#470C6B",
+      "titleBar.activeBackground": "#641196",
+      "titleBar.activeForeground": "#FCF9FE"
+    }
+  }
+}

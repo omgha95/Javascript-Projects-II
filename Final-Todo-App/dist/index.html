@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32-DQjEQYWa.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-06UUWikr.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C8QDerrJ.css">
+  </head>
+  <body class="isDark">
+    <div class="container">
+      <header class="Header__container">
+        <h1 class="Header__logo">Todo</h1>
+        <button class="DarkThemeToggle">
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='26'%3e%3cpath%20fill='%23FFF'%20fill-rule='evenodd'%20d='M13%200c.81%200%201.603.074%202.373.216C10.593%201.199%207%205.43%207%2010.5%207%2016.299%2011.701%2021%2017.5%2021c2.996%200%205.7-1.255%207.613-3.268C23.22%2022.572%2018.51%2026%2013%2026%205.82%2026%200%2020.18%200%2013S5.82%200%2013%200z'/%3e%3c/svg%3e"
+            class="DarkThemeToggle__activate"
+            alt="dark-mode-icon"
+          />
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='26'%3e%3cpath%20fill='%23FFF'%20fill-rule='evenodd'%20d='M13%2021a1%201%200%20011%201v3a1%201%200%2011-2%200v-3a1%201%200%20011-1zm-5.657-2.343a1%201%200%20010%201.414l-2.121%202.121a1%201%200%2001-1.414-1.414l2.12-2.121a1%201%200%20011.415%200zm12.728%200l2.121%202.121a1%201%200%2001-1.414%201.414l-2.121-2.12a1%201%200%20011.414-1.415zM13%208a5%205%200%20110%2010%205%205%200%20010-10zm12%204a1%201%200%20110%202h-3a1%201%200%20110-2h3zM4%2012a1%201%200%20110%202H1a1%201%200%20110-2h3zm18.192-8.192a1%201%200%20010%201.414l-2.12%202.121a1%201%200%2001-1.415-1.414l2.121-2.121a1%201%200%20011.414%200zm-16.97%200l2.121%202.12A1%201%200%20015.93%207.344L3.808%205.222a1%201%200%20011.414-1.414zM13%200a1%201%200%20011%201v3a1%201%200%2011-2%200V1a1%201%200%20011-1z'/%3e%3c/svg%3e"
+            class="DarkThemeToggle__deactivate"
+            alt="light-mode-icon"
+          />
+        </button>
+      </header>
+      <main class="TaskList">
+        <form class="TaskList__form">
+          <div class="TaskList__checkbox"></div>
+          <input
+            class="TaskList__input"
+            type="text"
+            id="task"
+            name="task"
+            placeholder="Create a new todo"
+            required
+          />
+        </form>
+        <section>
+          <ul class="TaskList__list"></ul>
+        </section>
+        <div class="TaskList__footer">
+          <div>
+            <span class="TaskList__incompleteTasksCount">0</span> items left
+          </div>
+          <nav class="TaskList__navigation">
+            <ul class="TaskList__navList">
+              <li class="TaskList__navList-item">
+                <button class="TaskList__navList-button">All</button>
+              </li>
+              <li class="TaskList__navList-item">
+                <button class="TaskList__navList-button">Active</button>
+              </li>
+              <li class="TaskList__navList-item">
+                <button class="TaskList__navList-button">Completed</button>
+              </li>
+            </ul>
+          </nav>
+          <div role="button" class="TaskList__clearCompletedBtn">
+            Clear Completed
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="attribution">
+          <p>Drag and drop to reorder the list!</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
